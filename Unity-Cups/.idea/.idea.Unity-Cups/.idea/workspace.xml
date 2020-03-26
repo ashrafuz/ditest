@@ -10,6 +10,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/Menu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Camera_Beer_pong.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585253978018</updated>
-      <workItem from="1585253980849" duration="588000" />
+      <workItem from="1585253980849" duration="1468000" />
     </task>
     <servers />
   </component>

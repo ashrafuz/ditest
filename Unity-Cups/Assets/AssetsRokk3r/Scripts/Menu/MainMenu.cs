@@ -127,8 +127,7 @@ public class MainMenu : MonoBehaviour
 	}
 	void Awake()
 	{
-		
-		DontDestroyOnLoad(transform.gameObject);
+		//DontDestroyOnLoad(transform.gameObject);
 	}
 
 	void Start()
