@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Arrow
+  - IceBall
+  - FruitParticle
+  - Thruster
+  - Sound Effect
+  - Music
+  - Block
+  - ContainerNext
+  - Beer_pong
+  - Doble_Pong
+  - Menu
+  - Bug
+  - Mesh
+  - blue
+  - green
+  - red
+  - violet
+  - yellow
+  - random
+  - centerball
+  - black_hole
+  - light
+  - cloud
+  - Ball
+  - PointBack
+  - PointDown
+  - PointUp
+  - PointRight
+  - PointLeft
+  - Obstacle
+  - Net
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Mesh
+  - Ball
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 2834281725
+    locked: 0
+  - name: 2
+    uniqueID: 2951329227
+    locked: 0
+  - name: 3
+    uniqueID: 2273800269
+    locked: 0
+  - name: 4
+    uniqueID: 1961584129
+    locked: 0
+  - name: 5
+    uniqueID: 2287294621
+    locked: 0
+  - name: 6
+    uniqueID: 453561791
+    locked: 0
+  - name: 7
+    uniqueID: 3257202343
+    locked: 0
+  - name: 8
+    uniqueID: 3271543577
+    locked: 0
+  - name: 9
+    uniqueID: 2754305629
+    locked: 0
+  - name: 10
+    uniqueID: 2071301253
+    locked: 0
+  - name: 11
+    uniqueID: 798983151
+    locked: 0
+  - name: 12
+    uniqueID: 1437839467
+    locked: 0
+  - name: 13
+    uniqueID: 3370801323
+    locked: 0
+  - name: 14
+    uniqueID: 2629955969
+    locked: 0
+  - name: 15
+    uniqueID: 1192266999
+    locked: 0
