@@ -11,28 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: 20e76ea01ee804648adfdbdf87dae436
-  - enabled: 0
-    path: Assets/Scenes/penal_session.unity
-    guid: ed61a956342c5874d89c4ff9fe74a4b3
-  - enabled: 0
-    path: Assets/Scenes/penal_session_timer.unity
-    guid: 54c2507c411dc4d83b72df8a25545702
-  - enabled: 0
-    path: Assets/Scenes/game_Match3.unity
-    guid: d1d77368d713aaa498761c3f32801f9d
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/game_Tetris.unity
-    guid: 9642ac030076d8a4ab87ece5a4d5ee51
   - enabled: 1
     path: Assets/Scenes/Beer_pong.unity
     guid: 77fdbc9655d51bb41975367c66cf17e8
-  - enabled: 0
-    path: Assets/Scenes/GameTrivia.unity
-    guid: c20fb877b67394943bef9f811cd506b4
   m_configObjects: {}

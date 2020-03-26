@@ -11,10 +11,7 @@ public class MainMenu : MonoBehaviour
 	//{  "gameID": "7",  "tournamentID":"1",  "scene":"Trivia_practice_mode",  "updateTime": "20","isDebug":"Debug" }
 	private JsonData Data;
 	public static string MODE = "game_mode";
-
-
-
-
+	
 	#if UNITY_IOS
 
 	[System.Runtime.InteropServices.DllImport("__Internal")]
@@ -26,7 +23,6 @@ public class MainMenu : MonoBehaviour
 	[System.Runtime.InteropServices.DllImport("__Internal")]
 	extern static public void NativeLog(string log);
 
-	/*
 	public static void TotalPoints(string points)
 	{
 		//Debug.Log ("Recibio TOTALPOINTS "+points);
@@ -39,14 +35,8 @@ public class MainMenu : MonoBehaviour
 	{
 		//Debug.Log ("Recibio LoadingError "+errorM);
 	}
-	*/
 
-	#endif
-
-
-
-	//dummy for tests in the editor
-	#if UNITY_EDITOR_IOS
+#elif UNITY_EDITOR
 	public static void TotalPoints(string points)
 	{
 	//Debug.Log ("Recibio TOTALPOINTS "+points);
@@ -62,10 +52,8 @@ public class MainMenu : MonoBehaviour
 	public static void NativeLog(string log)
 	{
 	}
-	#endif
-
-
-	#if UNITY_ANDROID
+	
+#elif UNITY_ANDROID
 
 	public static void LoadingError(string errorM)
 	{
@@ -139,7 +127,7 @@ public class MainMenu : MonoBehaviour
 	}
 	void Awake()
 	{
-
+		
 		DontDestroyOnLoad(transform.gameObject);
 	}
 
