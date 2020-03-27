@@ -1,0 +1,223 @@
+using UnityEngine;
+using System.Collections;
+using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
+using System.IO;
+using LitJson;
+
+[System.Serializable]
+public class GameConfig
+{
+	//should follow a common format (CamelCase or under_score, but since its a KEY and shouldn't be modified, i kept it as it was)
+	public const string GAME_TO_LOAD_KEY = "GameToLoad";
+	public const string GAME_MODE_KEY = "game_mode";
+	
+	public int gameID = 0;
+	public int tournamentID = 0;
+	public int updateTime = 20;
+	
+	public string debug = "Debug";
+	public string url = "";
+	public string token = "";
+	
+	[Space] [Header("Scene Info")]
+	public string scene = "";
+	public int levelID = -1;
+	public string gameToLoad = "";
+	public int mode = 0;
+	public string GetJSONString()
+	{
+		return  JsonUtility.ToJson(this);
+	}
+}
+
+public class MainMenu : MonoBehaviour
+{
+//	public string Test_Json;
+//	//{  "gameID": "7",  "tournamentID":"1",  "scene":"Trivia_practice_mode",  "updateTime": "20","isDebug":"Debug" }
+	public GameConfig TestConfig;
+
+	public static void Exit()
+	{
+		//Clear Unused Textures
+		Resources.UnloadUnusedAssets();
+
+		Time.timeScale = 1;
+        SceneManager.LoadScene("menu");
+		//Application.LoadLevel("menu"); obsolete
+	}
+
+	public void TestSendString()
+	{
+		ChangeScene(TestConfig);
+	}
+	
+	/// <summary>
+	/// Save the variable to load the game mode in the scene
+	/// </summary>
+	/// <param name="value">num of the scene to be loaded</param>
+	public void GameModeSelect(int value)
+	{
+		//Clear Unused Textures
+		Resources.UnloadUnusedAssets();
+
+		//Application.LoadLevel(value);
+		//PlayerPrefs.SetString("nextLevel", value);
+		//SceneManager.LoadScene("Loading");
+
+        SceneManager.LoadScene(value);
+        // Better way to change scenes
+        // Appication.LoadLevel is obsolete
+	}
+	
+	/// <summary>
+	/// This method has expose to code ios for Changes the between scene.
+	/// </summary>
+	/// <param name="gameConfig">Level key name.</param>
+	// public void StartData(string levelName)
+	public void ChangeScene(GameConfig gameConfig)
+	{
+		NativeLog(gameConfig.GetJSONString());
+		Debug.Log(gameConfig.GetJSONString());
+
+		PlayerPrefs.SetString("gameID", gameConfig.gameID.ToString());
+		PlayerPrefs.SetString("tournamentID", gameConfig.tournamentID.ToString());
+		PlayerPrefs.SetString("isDebug", gameConfig.debug);
+		PlayerPrefs.SetString("updateTime", gameConfig.updateTime.ToString());
+		PlayerPrefs.SetString("url", gameConfig.url + "api/v1/games/randomness");
+		PlayerPrefs.SetString("urlTrivia", gameConfig.url + "game/");
+
+		// ASSUMPTION: levelID / sceneID will be provided with the config,
+		// I understand that remote config *shouldn't* know about scene indices,
+		// but mapping string with switch cases are messy and more prone to errors
+		// my suggestion would be, use gameID as a mapper.
+
+		PlayerPrefs.SetString("token", gameConfig.token);
+		PlayerPrefs.SetInt(GameConfig.GAME_MODE_KEY, gameConfig.mode);
+		PlayerPrefs.SetString(GameConfig.GAME_TO_LOAD_KEY, gameConfig.gameToLoad);
+		GameModeSelect(gameConfig.levelID);
+	}
+	
+    public void Unload(){
+        Application.Unload();
+    }
+
+    /// <summary>
+	/// Go to the main menu.
+	/// </summary>
+	public void GoMainMenu()
+	{
+		//Clear Unused Textures
+		Resources.UnloadUnusedAssets();
+
+		PlayerPrefs.SetInt(GameConfig.GAME_MODE_KEY, -1);
+		SceneManager.LoadScene("menu");
+	}
+
+	#region  NATIVE_LOG
+#if UNITY_IOS
+
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void TotalPoints(string points);
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void UpdatePoints(string points);
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void LoadingError(string errorM);
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void NativeLog(string log);
+
+	public static void TotalPoints(string points)
+	{
+		//Debug.Log ("Recibio TOTALPOINTS "+points);
+	}
+	public static void UpdatePoints(string points)
+	{
+		//Debug.Log ("Recibio UPDATEPOINTS "+points);
+	}
+	public static void LoadingError(string errorM)
+	{
+		//Debug.Log ("Recibio LoadingError "+errorM);
+	}
+
+#elif UNITY_EDITOR
+	public static void TotalPoints(string points)
+	{
+	//Debug.Log ("Recibio TOTALPOINTS "+points);
+	}
+	public static void UpdatePoints(string points)
+	{
+	//Debug.Log ("Recibio UPDATEPOINTS "+points);
+	}
+	public static void LoadingError(string errorM)
+	{
+	//Debug.Log ("Recibio LoadingError "+errorM);
+	}
+	public static void NativeLog(string log)
+	{
+	}
+	
+#elif UNITY_ANDROID
+
+	public static void LoadingError(string errorM)
+	{
+		using (var javaUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		{
+			using (var currentActivity = javaUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+			{
+				currentActivity.Call("LoadingError", errorM);
+			}
+
+		}
+	}
+
+	public static void NativeLog(string log)
+	{
+		/*
+		using (var javaUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		{
+			using (var currentActivity = javaUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+			{
+				currentActivity.Call("LoadingError", errorM);
+			}
+
+		}
+		*/
+	}
+
+	public static void TotalPoints(string points)
+	{
+		using (var javaUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		{
+			using (var currentActivity = javaUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+			{
+				currentActivity.Call("TotalPoints", points);
+			}
+
+		}
+	}
+	public static void UpdatePoints(string points)
+	{
+		using (var javaUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		{
+			using (var currentActivity = javaUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+			{
+				currentActivity.Call("UpdatePoints", points);
+			}
+
+		}
+	}
+
+	public static void SceneLoad()
+	{
+		using (var javaUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		{
+			using (var currentActivity = javaUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+			{
+				currentActivity.Call("SceneLoad", "ChangeScene");
+			}
+		}
+	}
+	#endif
+	#endregion
+	
+}

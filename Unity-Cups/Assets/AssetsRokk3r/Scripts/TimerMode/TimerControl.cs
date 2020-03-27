@@ -28,7 +28,7 @@ public class TimerControl: MonoBehaviour
 	void Awake ()
 	{
 		shared = this;
-		_gameMode = PlayerPrefs.GetInt (MainMenu.MODE);
+		_gameMode = PlayerPrefs.GetInt (GameConfig.GAME_MODE_KEY);
 
 		// Check if is practice mode
 		// tournamentID == 1 is practice

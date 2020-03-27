@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 151528724}
   - component: {fileID: 151528723}
   - component: {fileID: 151528722}
+  - component: {fileID: 151528725}
   m_Layer: 5
   m_Name: TriviaTimeMode
   m_TagString: Untagged
@@ -280,19 +281,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 151528723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Trivia_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug" }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &151528723
@@ -332,6 +321,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151528720}
   m_CullTransparentMesh: 0
+--- !u!114 &151528725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151528720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: Trivia_timer_mode
+    levelID: 6
+    gameToLoad: GameTrivia
+    mode: 2
+  Menu: {fileID: 1943551946}
 --- !u!1 &152519251
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +668,7 @@ GameObject:
   - component: {fileID: 430921394}
   - component: {fileID: 430921393}
   - component: {fileID: 430921392}
+  - component: {fileID: 430921395}
   m_Layer: 5
   m_Name: TetrisPracticeMode
   m_TagString: Untagged
@@ -724,19 +738,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 430921393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Tetris_practice_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug" }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &430921393
@@ -776,6 +778,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430921390}
   m_CullTransparentMesh: 0
+--- !u!114 &430921395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430921390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: Tetris_practice_mode
+    levelID: 4
+    gameToLoad: game_Tetris
+    mode: 1
+  Menu: {fileID: 1943551946}
 --- !u!1 &461565472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1437,7 @@ GameObject:
   - component: {fileID: 841265325}
   - component: {fileID: 841265324}
   - component: {fileID: 841265323}
+  - component: {fileID: 841265326}
   m_Layer: 5
   m_Name: Penalty
   m_TagString: Untagged
@@ -1480,19 +1507,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 841265324}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug"   }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &841265324
@@ -1532,6 +1547,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841265321}
   m_CullTransparentMesh: 0
+--- !u!114 &841265326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841265321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: timer_mode
+    levelID: -1
+    gameToLoad: 
+    mode: 0
+  Menu: {fileID: 1943551946}
 --- !u!1 &884969944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1736,7 @@ GameObject:
   - component: {fileID: 983796321}
   - component: {fileID: 983796320}
   - component: {fileID: 983796319}
+  - component: {fileID: 983796323}
   m_Layer: 5
   m_Name: Match3TimerMode
   m_TagString: Untagged
@@ -1746,19 +1786,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 983796320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"313687",  "scene":"candy_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","url":"https://api-dev-lite-dot-duelit-1288.appspot.com/api/v1/games/randomness","token":"test","url":"Debug"  }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &983796320
@@ -1818,6 +1846,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 308}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &983796323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983796318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 313687
+    updateTime: 20
+    debug: 
+    url: https://api-dev-lite-dot-duelit-1288.appspot.com
+    token: test
+    scene: candy_timer_mode
+    levelID: 3
+    gameToLoad: game_Match3
+    mode: 2
+  Menu: {fileID: 1943551946}
 --- !u!1 &1092903616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1092903617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6226415, g: 0.56096476, b: 0.56096476, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1983,6 +2035,7 @@ GameObject:
   - component: {fileID: 1144962518}
   - component: {fileID: 1144962517}
   - component: {fileID: 1144962516}
+  - component: {fileID: 1144962519}
   m_Layer: 5
   m_Name: BubbleShooterTimeMode
   m_TagString: Untagged
@@ -2052,19 +2105,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1144962517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"bubble_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug" }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1144962517
@@ -2104,6 +2145,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144962514}
   m_CullTransparentMesh: 0
+--- !u!114 &1144962519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144962514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: bubble_timer_mode
+    levelID: 7
+    gameToLoad: game_BubbleShooter
+    mode: 2
+  Menu: {fileID: 1943551946}
 --- !u!1 &1209940617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,6 +2272,7 @@ GameObject:
   - component: {fileID: 1368091652}
   - component: {fileID: 1368091651}
   - component: {fileID: 1368091650}
+  - component: {fileID: 1368091653}
   m_Layer: 5
   m_Name: TetrisTimeMode
   m_TagString: Untagged
@@ -2276,19 +2342,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1368091651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Tetris_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug"   }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1368091651
@@ -2328,6 +2382,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368091648}
   m_CullTransparentMesh: 0
+--- !u!114 &1368091653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368091648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: Tetris_timer_mode
+    levelID: 4
+    gameToLoad: game_Tetris
+    mode: 2
+  Menu: {fileID: 1943551946}
 --- !u!1 &1382753397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2418,7 @@ GameObject:
   - component: {fileID: 1382753401}
   - component: {fileID: 1382753400}
   - component: {fileID: 1382753399}
+  - component: {fileID: 1382753402}
   m_Layer: 5
   m_Name: Match3PracticeMode
   m_TagString: Untagged
@@ -2409,19 +2488,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1382753400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"candy_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug"  }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1382753400
@@ -2461,6 +2528,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382753397}
   m_CullTransparentMesh: 0
+--- !u!114 &1382753402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382753397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: candy_timer_mode
+    levelID: 3
+    gameToLoad: game_Match3
+    mode: 1
+  Menu: {fileID: 1943551946}
 --- !u!1 &1419216793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2835,7 @@ GameObject:
   - component: {fileID: 1628092326}
   - component: {fileID: 1628092325}
   - component: {fileID: 1628092324}
+  - component: {fileID: 1628092327}
   m_Layer: 5
   m_Name: BubbleShooterPracticeMode
   m_TagString: Untagged
@@ -2813,19 +2905,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1628092325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"bubble_practice_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug" }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1628092325
@@ -2865,6 +2945,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628092322}
   m_CullTransparentMesh: 0
+--- !u!114 &1628092327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628092322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: bubble_practice_mode
+    levelID: 7
+    gameToLoad: game_BubbleShooter
+    mode: 1
+  Menu: {fileID: 1943551946}
 --- !u!1 &1681205449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3162,7 @@ GameObject:
   - component: {fileID: 1878406510}
   - component: {fileID: 1878406509}
   - component: {fileID: 1878406508}
+  - component: {fileID: 1878406511}
   m_Layer: 5
   m_Name: 'BeerpongTimeMode '
   m_TagString: Untagged
@@ -3127,19 +3232,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1878406509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Beer_pong_timer_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug"   }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1878406509
@@ -3179,6 +3272,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878406506}
   m_CullTransparentMesh: 0
+--- !u!114 &1878406511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878406506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: Beer_pong_timer_mode
+    levelID: 2
+    gameToLoad: Beer_pong
+    mode: 2
+  Menu: {fileID: 1943551946}
 --- !u!1 &1900280856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,7 +3391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1943551946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,8 +3404,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ad0783999ef21428175cbd0cf8a569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Test_Json: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Trivia_practice_mode",  "updateTime":
-    "20","isDebug":"Debug" }'
+  TestConfig:
+    gameID: 0
+    tournamentID: 0
+    updateTime: 20
+    debug: 
+    url: 
+    token: 
+    scene: 
+    levelID: -1
+    gameToLoad: 
+    mode: 0
 --- !u!4 &1943551947
 Transform:
   m_ObjectHideFlags: 0
@@ -3315,6 +3441,7 @@ GameObject:
   - component: {fileID: 1963029815}
   - component: {fileID: 1963029814}
   - component: {fileID: 1963029813}
+  - component: {fileID: 1963029816}
   m_Layer: 5
   m_Name: TriviaPracticeMode
   m_TagString: Untagged
@@ -3384,19 +3511,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1963029814}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943551946}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: '{  "gameID": "7",  "tournamentID":"1",  "scene":"Trivia_practice_mode",  "updateTime":
-            "20","isDebug":"Debug","token":"Debug","url":"Debug"   }'
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1963029814
@@ -3436,6 +3551,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963029811}
   m_CullTransparentMesh: 0
+--- !u!114 &1963029816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963029811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817389728420345e799526a678c23c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    gameID: 7
+    tournamentID: 1
+    updateTime: 20
+    debug: Debug
+    url: Debug
+    token: Debug
+    scene: Trivia_practice_mode
+    levelID: 6
+    gameToLoad: GameTrivia
+    mode: 1
+  Menu: {fileID: 1943551946}
 --- !u!1 &2005721934
 GameObject:
   m_ObjectHideFlags: 0

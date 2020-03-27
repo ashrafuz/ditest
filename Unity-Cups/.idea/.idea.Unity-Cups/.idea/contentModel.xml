@@ -147,7 +147,6 @@
             <e p="Menu" t="Include">
               <e p="GoalsCounter.cs" t="Include" />
               <e p="LoadMenu.cs" t="Include" />
-              <e p="MainMenu.cs" t="Include" />
             </e>
             <e p="Target" t="Include">
               <e p="TargetController.cs" t="Include" />
@@ -537,6 +536,10 @@
         </e>
         <e p="Scenes" t="Include">
           <e p="Readme.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="GameConfigButton.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
         </e>
         <e p="Test-Readme12Hit.txt" t="Include" />
       </e>
