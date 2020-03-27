@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 using System;
 
 
-public class Shooting_Poong : MonoBehaviour {
-
+public class Shooting_Poong : MonoBehaviour
+{
     public Transform Point_Iniciate;
     public Transform Shadows_Iniciate;
     public GameObject Balls;
@@ -40,30 +40,19 @@ public class Shooting_Poong : MonoBehaviour {
     public GameObject Ball_force;
     public GameObject Validate_Force;
     public GameObject Validate_Force2;
-	public GameObject BackButton;
-
-
-	void Awake() {
-
-		// Check if is practice mode
-		// tournamentID == 1 is practice
-		string tournamentID = PlayerPrefs.GetString("tournamentID");
-
-		if (tournamentID != "1") {
-			// Is a challenge hidden the back button
-			BackButton.gameObject.SetActive (false);
-		}
-	}
+    public GameObject BackButton;
+    
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Time.fixedDeltaTime = 0.02F * Time.timeScale;
         Time.timeScale = 1f;
         Time_update_Max = int.Parse(PlayerPrefs.GetString("updateTime"));
         Time_update = Time_update_Max;
+
         StartCoroutine("UpdateTimer");
-        switch (PlayerPrefs.GetInt("game_mode"))
-        {
+        switch (PlayerPrefs.GetInt(GameConfig.GAME_MODE_KEY)) {
             case 1:
                 isEndlessTime = true;
                 break;
@@ -72,64 +61,60 @@ public class Shooting_Poong : MonoBehaviour {
                 break;
         }
 
-        if (!isEndlessTime)
-        {
+        if (!isEndlessTime) {
             StartCoroutine("HiddenObjectsTimer");
             Exit_BTN.gameObject.SetActive(false);
         }
-        else
-        {
+        else {
             timeLabel.text = "00:00";
         }
-
-
 
 ///////////
         Shooting = true;
         score = 0;
         scoreValue.text = score.ToString();
         ActualForce.text = Force.ToString();
-		#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID && !UNITY_EDITOR
         	MainMenu.SceneLoad();
-		#endif
-
-
+#endif
     }
+
     ///UPDATE TIME
     public IEnumerator UpdateTimer()
     {
         ////Update_Time
-        while (true)
-        {
-            while ((Time_update > 0))
-            {
+        while (true) {
+            while ((Time_update > 0)) {
                 Time_update--;
                 yield return new WaitForSeconds(1);
             }
+
             yield return new WaitForEndOfFrame();
         }
     }
+
     /// 
     public IEnumerator HiddenObjectsTimer()
     {
         Timer = maxTime;
         Time_update = Time_update_Max;
-        while (true)
-        {
-            while ((Timer > 0))
-            {
+        while (true) {
+            while ((Timer > 0)) {
                 Timer--;
-				if (Timer < 10)
-				{
-					timeLabel.text = "00:0" + Timer.ToString();
-				}else{
-					timeLabel.text = "00:" + Timer.ToString();
-				}
+                if (Timer < 10) {
+                    timeLabel.text = "00:0" + Timer.ToString();
+                }
+                else {
+                    timeLabel.text = "00:" + Timer.ToString();
+                }
+
                 yield return new WaitForSeconds(1);
             }
+
             yield return new WaitForEndOfFrame();
         }
     }
+
     public void Shooting_time()
     {
         Ball_img.gameObject.SetActive(true);
@@ -138,40 +123,41 @@ public class Shooting_Poong : MonoBehaviour {
         Shooting = true;
     }
 
-    public void Up_force ()
+    public void Up_force()
     {
-        if (Force < MaxForce)
-        {
-           Force += 1;
+        if (Force < MaxForce) {
+            Force += 1;
         }
     }
+
     public void Down_force()
     {
-        if (Force > 1 )
-        {
+        if (Force > 1) {
             Force -= 1;
         }
     }
+
     public void shoot()
     {
-        if (Shooting)
-        {
+        if (Shooting) {
             Ball_img.gameObject.SetActive(false);
             Ball_force.gameObject.SetActive(false);
             Shooting = false;
-            GameObject Ball_Poong = (GameObject)Instantiate(Balls, Point_Iniciate.position, Point_Iniciate.transform.rotation);
-            GameObject Ball_Shadow = (GameObject)Instantiate(Shadows, Shadows_Iniciate.position, Shadows_Iniciate.transform.rotation);
+            GameObject Ball_Poong =
+                (GameObject) Instantiate(Balls, Point_Iniciate.position, Point_Iniciate.transform.rotation);
+            GameObject Ball_Shadow =
+                (GameObject) Instantiate(Shadows, Shadows_Iniciate.position, Shadows_Iniciate.transform.rotation);
 
-			Ball_Poong.GetComponent<Rigidbody> ().rotation = Ball_Poong.transform.rotation;
-			Ball_Poong.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, Force), ForceMode.VelocityChange);
-				
+            Ball_Poong.GetComponent<Rigidbody>().rotation = Ball_Poong.transform.rotation;
+            Ball_Poong.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, Force), ForceMode.VelocityChange);
 
 
             BarForce.GetComponent<Slider>().value = 0;
-			//Debug.Log ("shoooot: "+Force);
+            //Debug.Log ("shoooot: "+Force);
             Invoke("Shooting_time", Time_shooting);
         }
     }
+
     public void Pause()
     {
         Time.timeScale = 0;
@@ -179,6 +165,7 @@ public class Shooting_Poong : MonoBehaviour {
         PopUpExit.gameObject.SetActive(true);
         HUD.gameObject.SetActive(false);
     }
+
     public void CancelPause()
     {
         Time.timeScale = 1;
@@ -186,18 +173,18 @@ public class Shooting_Poong : MonoBehaviour {
         PopUpExit.gameObject.SetActive(false);
         HUD.gameObject.SetActive(true);
     }
+
     public void Exit()
     {
-		//Clear Unused Textures
-		Resources.UnloadUnusedAssets();
+        //Clear Unused Textures
+        Resources.UnloadUnusedAssets();
 
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        PlayerPrefs.SetInt("game_mode", -1);
-        SceneManager.LoadScene("menu");
-
-
+        PlayerPrefs.SetInt(GameConfig.GAME_MODE_KEY, -1);
+        SceneManager.LoadScene(GameConstants.MENU_SCENE);
     }
+
     public void GameOver()
     {
         Ball_img.gameObject.SetActive(false);
@@ -205,29 +192,26 @@ public class Shooting_Poong : MonoBehaviour {
         Totalscore.text = scoreValue.text;
         //PopUpGameOver.gameObject.SetActive(true);
         HUD.gameObject.SetActive(false);
-        if (!isEndlessTime)
-        {
+        if (!isEndlessTime) {
             MainMenu.TotalPoints(Totalscore.text.ToString());
             isEndlessTime = true;
             MainMenu.Exit();
         }
-       
-
     }
+
     public void TryAgain()
     {
         Time.timeScale = 1;
-        PlayerPrefs.SetString("nextLevel", "Beer pong");
+        PlayerPrefs.SetString("nextLevel", GameConstants.BEER_PONG_SCENE_NAME);
 
-		//Clear Unused Textures
-		Resources.UnloadUnusedAssets();
-
-        SceneManager.LoadScene("Beer pong");
+        //Clear Unused Textures
+        Resources.UnloadUnusedAssets();
+        SceneManager.LoadScene(GameConstants.BEER_PONG_SCENE_NAME);
     }
 
     // Update is called once per frame
-    void Update () {
-
+    void Update()
+    {
         Bar_indForce.transform.localScale = new Vector3(Force, 1.0f, 1.0f);
         Force = BarForce.GetComponent<Slider>().value;
         //if (Full) 
@@ -246,40 +230,37 @@ public class Shooting_Poong : MonoBehaviour {
         //    }
         //}
         ////////////////
-        if (Validate_Force.GetComponent<RectTransform>().localScale.x == 0)
-        {
+        if (Validate_Force.GetComponent<RectTransform>().localScale.x == 0) {
             BarForce.GetComponent<Slider>().value = 0;
         }
-        if (!Validate_Force2.activeInHierarchy)
-        {
-            BarForce.GetComponent<Slider>().value =0;
+
+        if (!Validate_Force2.activeInHierarchy) {
+            BarForce.GetComponent<Slider>().value = 0;
         }
-        if (!isEndlessTime)
-        {
-            if (Timer == 0)
-            {
+
+        if (!isEndlessTime) {
+            if (Timer == 0) {
                 Time_update = 20;
                 gameOverTitle.gameObject.SetActive(true);
                 Invoke("GameOver", 2);
             }
         }
-        if (Time_update == 0)
-        {
-			#if !UNITY_EDITOR
-				UpdatePoints();
-			#endif
-            
-        }
-        scoreValue.text = score.ToString();
-        ActualForce.text =" "+ Force.ToString("f0");
+        else { }
 
-        if (Input.GetButtonDown("Jump"))
-        {
+        if (Time_update == 0) {
+#if !UNITY_EDITOR
+				UpdatePoints();
+#endif
+        }
+
+        scoreValue.text = score.ToString();
+        ActualForce.text = " " + Force.ToString("f0");
+
+        if (Input.GetButtonDown("Jump")) {
             shoot();
         }
+    }
 
-            
-        }
     public void UpdatePoints()
     {
         Time_update = int.Parse(PlayerPrefs.GetString("updateTime"));

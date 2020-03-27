@@ -9,10 +9,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Validate_Score.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Sound_pong.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Menu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/cursor_angle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/TimerMode/TimerControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameConfigButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreLogic/CoreDebugHelper/ShootDebug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreLogic/Shoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongGameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BallSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/ShooT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Utility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shooting_Poong.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Camera_Beer_pong.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/ThirdParties/iTweenEditor/iTween.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -20,6 +31,15 @@
         <option value="$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/TimerMode/TimerControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameConfigButton.cs" />
         <option value="$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/Menu/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Validate_Score.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BallSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Utility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Camera_Beer_pong.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shooting_Poong.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +97,8 @@
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="497" y="252" width="797" height="639" key="find.popup" />
+    <state x="497" y="252" width="797" height="639" key="find.popup/3584.2240" />
     <state x="559" y="266" width="672" height="678" key="search.everywhere.popup" />
     <state x="559" y="266" width="672" height="678" key="search.everywhere.popup/3584.2240" />
   </component>

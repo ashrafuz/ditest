@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class Validate_Score : MonoBehaviour {
-
-    private GameObject Ball;
+public class Validate_Score : MonoBehaviour
+{
     public float Time_max_efect;
     public int Total_Score;
     public Transform Point_Iniciate;
@@ -11,55 +11,38 @@ public class Validate_Score : MonoBehaviour {
     public GameObject Points;
     public GameObject Bonus;
 
+    private Camera _mainCam;
+
     // Use this for initialization
-    void Start () {
-	
-	}
-	   void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.tag == "Beer_pong")
-        {
+        _mainCam = Camera.main;
+    }
 
-          Ball = other.gameObject;
-          Ball.GetComponent<Rigidbody>().isKinematic = true;
-            Destroy(Ball.gameObject);
-            Invoke("Score_Pong", 0);
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Beer_pong")) {
+            other.GetComponent<Rigidbody>().isKinematic = true;
+            Score_Pong(false);
         }
-        if (other.tag == "Doble_Pong")
-        {
-            Ball = other.gameObject;
-            Destroy(Ball.gameObject);
-            Invoke("Score_Pong_Doble", 0);
+        else if (other.tag.Equals("Doble_Pong")) {
+            Score_Pong(true);
         }
     }
 
-    public void Score_Pong()
+    public void Score_Pong(bool isDouble)
     {
-       GameObject Particles_Score = (GameObject)Instantiate(Particles, Point_Iniciate.position, Camera.main.transform.rotation);
-        GameObject Points_Score = (GameObject)Instantiate(Points, Point_Iniciate.position, Camera.main.transform.rotation);
-        Shooting_Poong.score += Total_Score;
-        Destroy(Ball.gameObject);
-
-		GetComponent<AudioSource>().Play();
-        
-        //Debug.Log("Cesta!");
-
-    }
-    public void Score_Pong_Doble()
-    {
-        GameObject Particles_Score = (GameObject)Instantiate(Particles, Point_Iniciate.position, Camera.main.transform.rotation);
-        GameObject Points_Score = (GameObject)Instantiate(Bonus, Point_Iniciate.position, Camera.main.transform.rotation);
-        Destroy(Ball.gameObject);
-        Shooting_Poong.score += Total_Score*2;
-//        Debug.Log("Cesta del bonus!");
-
-		GetComponent<AudioSource>().Play();
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-		
-
+        GameObject Particles_Score =
+            (GameObject) Instantiate(Particles, Point_Iniciate.position, _mainCam.transform.rotation);
+        if (isDouble) {
+            Instantiate(Points, Point_Iniciate.position, _mainCam.transform.rotation);
+            Shooting_Poong.score += Total_Score;
+        }
+        else {
+            GameObject Points_Score =
+                (GameObject) Instantiate(Bonus, Point_Iniciate.position, _mainCam.transform.rotation);
+            Shooting_Poong.score += Total_Score * 2;
+        }
+        GetComponent<AudioSource>().Play();
     }
 }

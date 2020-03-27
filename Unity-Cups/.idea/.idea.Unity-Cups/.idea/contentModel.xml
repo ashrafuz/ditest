@@ -160,6 +160,18 @@
             </e>
           </e>
         </e>
+        <e p="NewScripts" t="Include">
+          <e p="Gameplay" t="Include">
+            <e p="BallSpawner.cs" t="Include" />
+            <e p="BeerPongGameController.cs" t="Include" />
+            <e p="BeerPongUI.cs" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="GameConfigButton.cs" t="Include" />
+            <e p="MainMenu.cs" t="Include" />
+          </e>
+          <e p="Utility.cs" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="GoKit" t="Include">
             <e p="base" t="Include">
@@ -536,10 +548,6 @@
         </e>
         <e p="Scenes" t="Include">
           <e p="Readme.txt" t="Include" />
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="GameConfigButton.cs" t="Include" />
-          <e p="MainMenu.cs" t="Include" />
         </e>
         <e p="Test-Readme12Hit.txt" t="Include" />
       </e>
