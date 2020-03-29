@@ -52,12 +52,12 @@ public class MainMenu : MonoBehaviour
 		NativeLog(gameConfig.GetJSONString());
 		Debug.Log(gameConfig.GetJSONString());
 
-		PlayerPrefs.SetString("gameID", gameConfig.gameID.ToString());
-		PlayerPrefs.SetString("tournamentID", gameConfig.tournamentID.ToString());
-		PlayerPrefs.SetString("isDebug", gameConfig.debug);
-		PlayerPrefs.SetString("updateTime", gameConfig.updateTime.ToString());
-		PlayerPrefs.SetString("url", gameConfig.url + "api/v1/games/randomness");
-		PlayerPrefs.SetString("urlTrivia", gameConfig.url + "game/");
+		PlayerPrefs.SetString(GameConstants.GAME_ID_KEY, gameConfig.gameID.ToString());
+		PlayerPrefs.SetString(GameConstants.TOURNAMENT_ID_KEY, gameConfig.tournamentID.ToString());
+		PlayerPrefs.SetString(GameConstants.DEBUG_KEY, gameConfig.debug);
+		PlayerPrefs.SetString(GameConstants.UPDATE_TIME_KEY, gameConfig.updateTime.ToString());
+		PlayerPrefs.SetString(GameConstants.URL_KEY, gameConfig.url + GameConstants.URL_END_POINT);
+		PlayerPrefs.SetString(GameConstants.URL_TRIVIA_KEY, gameConfig.url + GameConstants.URL_TRIVIA_ENDPOINT);
 
 		// ASSUMPTION: levelID / sceneID will be provided with the config,
 		// I understand that remote config *shouldn't* know about scene indices,
