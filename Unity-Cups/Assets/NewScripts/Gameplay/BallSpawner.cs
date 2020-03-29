@@ -17,8 +17,7 @@ public class BallSpawner : MonoBehaviour
     void Start()
     {
         _ballPool = new List<GameObject>();
-        Debug.Log("spawning shadow");
-        
+
         _savedShadow = Instantiate(ShadowPrefab, ShadowInitiate.position, ShadowInitiate.rotation);
         _savedShadow.transform.SetParent(this.transform);
         _shadowPong = _savedShadow.GetComponent<Shadow_Pong>();
@@ -53,7 +52,6 @@ public class BallSpawner : MonoBehaviour
     {
         for (int i = 0; i < _ballPool.Count; i++) {
             if (idleBall.Equals(_ballPool[i])) {
-//                Rigidbody rb = _ballPool[i].GetComponent<Rigidbody>();
                 _ballPool[i].SetActive(false);
             }
         }

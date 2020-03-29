@@ -10,6 +10,8 @@ public class BeerPongGameController : MonoBehaviour
     [SerializeField] private BeerPongUI _ui;
     [SerializeField] private int _maxTime;
     [SerializeField] private float _shootInterval;
+    [SerializeField] private GameObject _dummyBall;
+    [SerializeField] private ShooT _shooter;
 
     private int score;
     private bool isEndlessTime;
@@ -49,7 +51,7 @@ public class BeerPongGameController : MonoBehaviour
         if (!isEndlessTime) {
             timer += Time.deltaTime;
             if (Mathf.FloorToInt(timer) > lastUpdatedTime) {
-                //updates each second, no need to use coroutine
+                //updates each second, no need to use coroutine, not a fan of coroutine because it creates garbage in memory
                 lastUpdatedTime = Mathf.FloorToInt(timer);
                 _ui.UpdateTimer(Mathf.Clamp(_maxTime - lastUpdatedTime, 0, _maxTime));
             }
@@ -61,6 +63,11 @@ public class BeerPongGameController : MonoBehaviour
 
         if (lastShotTime > 0) {
             lastShotTime -= Time.deltaTime;
+            if (lastShotTime <= 0) {
+                //reactivate shooting mechanisms
+                _dummyBall.gameObject.SetActive(true);
+                _shooter.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -93,6 +100,8 @@ public class BeerPongGameController : MonoBehaviour
         rb.AddRelativeForce(new Vector3(0, 0, force), ForceMode.VelocityChange);
         
         _ui.HideIndicator(false);
+        _dummyBall.gameObject.SetActive(false);
+        _shooter.gameObject.SetActive(false);
     }
 
     private void OnBallCup(GameObject ball, int sc)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class Sound_pong : MonoBehaviour
@@ -7,32 +8,24 @@ public class Sound_pong : MonoBehaviour
     public float VOL_Pong;
     public float Vel;
     public GameObject Sound;
-    // Use this for initialization
+
+    private AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-      
-
-        if (collision.relativeVelocity.magnitude > 2)
-        {
-            Sound.GetComponent<AudioSource>().Play();
+        if (collision.relativeVelocity.magnitude > 2) {
+            audio.Play();
             VOL_Pong -= 1;
             Vel += 0.1f;
-            Sound.GetComponent<AudioSource>().volume -= VOL_Pong;
-            if (Sound.GetComponent<AudioSource>().pitch < 2.8f)
-                Sound.GetComponent<AudioSource>().pitch += Vel;
-
+            audio.volume -= VOL_Pong;
+            if (audio.pitch < 2.8f) {
+                audio.pitch += Vel;
+            }
         }
     }
-
-  
-void Start ()
-    {
-       // Sound=GameObject.Find("Audio_pong");
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

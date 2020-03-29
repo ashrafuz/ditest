@@ -3,23 +3,19 @@
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Assets Beer Pong" t="Include">
           <e p="LoadMenu.cs" t="Include" />
           <e p="Scripts" t="Include">
-            <e p="Ball_iniPoint.cs" t="Include" />
             <e p="Camera_Beer_pong.cs" t="Include" />
-            <e p="cursor_angle.cs" t="Include" />
             <e p="Delete_Mising_ball.cs" t="Include" />
             <e p="Joystick.cs" t="Include" />
             <e p="pointBehavior.cs" t="Include" />
             <e p="Pong_Rebound.cs" t="Include" />
             <e p="Shadow_Pong.cs" t="Include" />
             <e p="ShooT.cs" t="Include" />
-            <e p="Shooting_Poong.cs" t="Include" />
             <e p="Sound_pong.cs" t="Include" />
             <e p="Test_velocity.cs" t="Include" />
             <e p="Validate_Score.cs" t="Include" />
@@ -33,130 +29,6 @@
                   <e p="ProjectorMultiply.shader" t="Include" />
                 </e>
               </e>
-            </e>
-          </e>
-        </e>
-        <e p="Assets_Flick Football" t="Include">
-          <e p="Readme.txt" t="Include" />
-          <e p="Script" t="Include">
-            <e p="CoreGameFlow" t="Include">
-              <e p="SoundManager.cs" t="Include" />
-            </e>
-            <e p="CoreLogic" t="Include">
-              <e p="Audience.cs" t="Include" />
-              <e p="BallTarget.cs" t="Include" />
-              <e p="CameraManager.cs" t="Include" />
-              <e p="CoreDebugHelper" t="Include">
-                <e p="GKDebug.cs" t="Include" />
-                <e p="GKHorizontalFlyDebug.cs" t="Include" />
-                <e p="RecordDebug.cs" t="Include" />
-                <e p="ShootAIDebug.cs" t="Include" />
-                <e p="ShootDebug.cs" t="Include" />
-              </e>
-              <e p="Displaysled.cs" t="Include" />
-              <e p="GoalDetermine.cs" t="Include" />
-              <e p="GoalKeeper.cs" t="Include" />
-              <e p="GoalKeeperClone.cs" t="Include" />
-              <e p="GoalKeeperHorizontalFly.cs" t="Include" />
-              <e p="GoalKeeperLevel.cs" t="Include" />
-              <e p="GoalKeeperRecord.cs" t="Include" />
-              <e p="GoalKeeperRootMotion.cs" t="Include" />
-              <e p="Pole.cs" t="Include" />
-              <e p="ShooT.cs" t="Include" />
-              <e p="ShootAI.cs" t="Include" />
-              <e p="ShootRecord.cs" t="Include" />
-              <e p="SlowMotion.cs" t="Include" />
-              <e p="SwitchCamera.cs" t="Include" />
-              <e p="Wall.cs" t="Include" />
-            </e>
-            <e p="Demo" t="Include">
-              <e p="AutoResetAfterShootFinish.cs" t="Include" />
-              <e p="DemoGoalKeeper.cs" t="Include" />
-              <e p="DemoShoot.cs" t="Include" />
-              <e p="DemoShootAI.cs" t="Include" />
-              <e p="LoadScene.cs" t="Include" />
-              <e p="SimpleMatchLogic.cs" t="Include" />
-              <e p="SimpleSoundLogic.cs" t="Include" />
-            </e>
-            <e p="Utils" t="Include">
-              <e p="Constant.cs" t="Include" />
-              <e p="EventTouch.cs" t="Include" />
-              <e p="Interpolate.cs" t="Include" />
-              <e p="Math3d.cs" t="Include" />
-              <e p="MyMultiSelection.cs" t="Include" />
-              <e p="RunAfter.cs" t="Include" />
-              <e p="SmoothLookAt.cs" t="Include" />
-            </e>
-          </e>
-          <e p="ThirdParties" t="Include">
-            <e p="Holoville" t="Include">
-              <e p="HOTween1.3" t="Include">
-                <e p="HOTween_License.txt" t="Include" />
-              </e>
-              <e p="HOUnityEditor" t="Include">
-                <e p="Editor" t="Include">
-                  <e p="HOEditorGUIFramework.xml" t="Include" />
-                  <e p="HOEditorUtils.xml" t="Include" />
-                </e>
-              </e>
-            </e>
-            <e p="HOPath" t="Include">
-              <e p="Editor" t="Include">
-                <e p="HOPathEditor.cs" t="Include" />
-              </e>
-              <e p="HOPath.cs" t="Include" />
-              <e p="PathPreview.cs" t="Include" />
-            </e>
-            <e p="iTweenEditor" t="Include">
-              <e p="iTween.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="AssetsRokk3r" t="Include">
-          <e p="Audio" t="Include">
-            <e p="Soccer_SFX" t="Include">
-              <e p="A_Readme.txt" t="Include" />
-            </e>
-          </e>
-          <e p="Models" t="Include">
-            <e p="Soccer_Player" t="Include">
-              <e p="keyframe_information.txt" t="Include" />
-            </e>
-            <e p="Stadiums" t="Include">
-              <e p="Resources" t="Include">
-                <e p="Shaders" t="Include">
-                  <e p="Additive-Billboard.shader" t="Include" />
-                  <e p="Projector Multiply.shader" t="Include" />
-                  <e p="Unlit-Alpha-ZWrite-Lightmap 1.shader" t="Include" />
-                  <e p="Unlit-Alpha-ZWrite-Lightmap.shader" t="Include" />
-                  <e p="Unlit-DoubleUV-Overlay-Lightmap.shader" t="Include" />
-                </e>
-              </e>
-              <e p="Scripts" t="Include">
-                <e p="AnimatedTextureUV.cs" t="Include" />
-                <e p="BannerControl.cs" t="Include" />
-              </e>
-              <e p="Shaders" t="Include">
-                <e p="Unlit-DoubleUV-Lightmap.shader" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="Goalkeeper" t="Include">
-              <e p="GoalkeeperController.cs" t="Include" />
-            </e>
-            <e p="Menu" t="Include">
-              <e p="GoalsCounter.cs" t="Include" />
-            </e>
-            <e p="Target" t="Include">
-              <e p="TargetController.cs" t="Include" />
-              <e p="TargetPoint.cs" t="Include" />
-            </e>
-            <e p="TimerMode" t="Include">
-              <e p="TimerControl.cs" t="Include" />
-            </e>
-            <e p="Wall" t="Include">
-              <e p="WallController.cs" t="Include" />
             </e>
           </e>
         </e>
