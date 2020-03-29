@@ -1,24 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pong_Rebound : MonoBehaviour {
-
-    private GameObject Ball;
-    // Use this for initialization
-    void Start () {
-	
-	}
+public class Pong_Rebound : MonoBehaviour
+{
+    // NOT SURE WHAT ITS DOING, but i am sure there is a better way to handle it than this
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Beer_pong")
-        {
-            Ball = other.gameObject;
-            Ball.tag = "Doble_Pong";
+        if (other.tag.Equals(GameConstants.SINGLE_PONG_TAG)) {
+            other.gameObject.tag = GameConstants.DOUBLE_PONG_TAG;
         }
     }
-
-    // Update is called once per frame
-    void Update () {
-	
-	}
 }

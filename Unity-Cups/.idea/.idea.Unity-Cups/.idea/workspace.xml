@@ -9,17 +9,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Delete_Mising_ball.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreGameFlow/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Validate_Score.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Sound_pong.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Menu/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/cursor_angle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/TimerMode/TimerControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreLogic/CoreDebugHelper/ShootAIDebug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreLogic/CoreDebugHelper/ShootDebug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/NGUI/Scripts/UI/UI2DSprite.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Pong_Rebound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/Script/CoreLogic/Shoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongGameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shadow_Pong.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Gameplay/BallSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/ShooT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Assets_Flick Football/ThirdParties/HOPath/Editor/HOPathEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewScripts/Utility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shooting_Poong.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Camera_Beer_pong.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,13 +40,19 @@
         <option value="$PROJECT_DIR$/Assets/AssetsRokk3r/Scripts/Menu/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shooting_Poong.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Delete_Mising_ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/ShooT.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Utility.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Menu/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Pong_Rebound.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/cursor_angle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shadow_Pong.cs" />
         <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Validate_Score.cs" />
-        <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BallSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongUI.cs" />
         <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BeerPongGameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/NewScripts/Utility.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewScripts/Gameplay/BallSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Camera_Beer_pong.cs" />
-        <option value="$PROJECT_DIR$/Assets/Assets Beer Pong/Scripts/Shooting_Poong.cs" />
       </list>
     </option>
   </component>
@@ -88,6 +101,7 @@
       <updated>1585253978018</updated>
       <workItem from="1585253980849" duration="1895000" />
       <workItem from="1585286485611" duration="5814000" />
+      <workItem from="1585475212898" duration="4973000" />
     </task>
     <servers />
   </component>

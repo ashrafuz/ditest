@@ -5,49 +5,41 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.Serialization;
 
 
 public class Camera_Beer_pong : MonoBehaviour
 {
-    public float turnSpeed = 50f;
-    public float MinY;
-    public float Maxy;
     public float RotationY;
     public float MinX;
     public float MaxX;
 
     public float RotationX;
-
-    //  public Joystick _Joystick;
-    public Vector3 pos = Vector3.zero;
-    public Vector3 move;
-    public Vector3 moveY;
     public float dragSpeed = 2;
+
+    public GameObject Indicator;
+    public GameObject BallObject;
+    public GameObject Pointer;
+    
+    // Use this for initialization
+    public GameObject Container;
+
     private Vector3 dragOrigin;
     private Vector3 dragOriginY;
-
-    public GameObject AngleY;
-
-    // Use this for initialization
-    public GameObject container;
-
+    private Vector3 pos = Vector3.zero;
+    private Vector3 move;
     private Camera _mainCam;
     private RectTransform _containerRect;
 
     void Start()
     {
         _mainCam = Camera.main;
-        _containerRect = container.GetComponent<RectTransform>();
+        _containerRect = Container.GetComponent<RectTransform>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        // RotationY = _Joystick.JoystickInput.y*10;
         RotationX = move.x;
-        ///  RotationY = AngleY.GetComponent<Slider>().value-15;
-        //  RotationY = moveY.y;
-
         if (Input.GetMouseButtonDown(0)) {
             if (RectTransformUtility.RectangleContainsScreenPoint(_containerRect, Input.mousePosition, _mainCam)) {
                 dragOrigin = Input.mousePosition;
@@ -67,13 +59,11 @@ public class Camera_Beer_pong : MonoBehaviour
             pos = _mainCam.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
             move = new Vector3(pos.x * dragSpeed, 0, 0);
         }
-
-        //    RotationY += 0 * Time.deltaTime;
-        //RotationY = Mathf.Clamp(RotationY, MinY, Maxy);
-        //transform.localEulerAngles = new Vector3(RotationY, RotationX, 0);
-
-        RotationX += 0 * Time.deltaTime;
+        
         RotationX = Mathf.Clamp(RotationX, MinX, MaxX);
-        transform.localEulerAngles = new Vector3(RotationY, RotationX, 0);
+        
+        Pointer.transform.localEulerAngles = new Vector3(RotationY, RotationX, 0);
+        BallObject.transform.localEulerAngles = new Vector3(RotationY, RotationX, 0); 
+        Indicator.transform.localEulerAngles = new Vector3(RotationY, RotationX * 3, 0);
     }
 }

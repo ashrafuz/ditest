@@ -1,33 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class ShooT : MonoBehaviour {
 
-    public GameObject Manager_Pong;
+public class ShooT : MonoBehaviour
+{
+    public static event Action<float> OnShoot;
+    
+    public Slider ForceSlider;
     public GameObject Pointer;
     public GameObject Bar_force;
-    public GameObject force;
-    // Use this for initialization
-    void Start () {
-	
-	}
 
     void OnMouseUp()
     {
-        force.GetComponent<Slider>().value = 0;
-        Pointer.gameObject.SetActive(false);
+        //Pointer.gameObject.SetActive(false);
         Bar_force.gameObject.SetActive(false);
-        Manager_Pong.GetComponent<Shooting_Poong>().shoot();
+        OnShoot?.Invoke(ForceSlider.value);
+        ForceSlider.value = 0;
     }
+
     void OnMouseDown()
     {
-       
-        Pointer.gameObject.SetActive(true);
+        //Pointer.gameObject.SetActive(true);
         Bar_force.gameObject.SetActive(true);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

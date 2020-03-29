@@ -11,11 +11,17 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private Transform ShadowInitiate;
 
     private List<GameObject> _ballPool;
-    private List<GameObject> _shadowPool;
-    
+    private GameObject _savedShadow; //assuming we need only one shadow per shoot
+    private Shadow_Pong _shadowPong;
+
     void Start()
     {
         _ballPool = new List<GameObject>();
+        Debug.Log("spawning shadow");
+        
+        _savedShadow = Instantiate(ShadowPrefab, ShadowInitiate.position, ShadowInitiate.rotation);
+        _savedShadow.transform.SetParent(this.transform);
+        _shadowPong = _savedShadow.GetComponent<Shadow_Pong>();
     }
 
     public GameObject GetABall()
@@ -34,8 +40,11 @@ public class BallSpawner : MonoBehaviour
         _ballPool[newBallIndex].transform.position = PointInitiate.position;
         _ballPool[newBallIndex].transform.rotation = PointInitiate.rotation;
         
-        _shadowPool[newBallIndex].transform.position = ShadowInitiate.position;
-        _shadowPool[newBallIndex].transform.rotation = ShadowInitiate.rotation;
+        _savedShadow.transform.position = ShadowInitiate.position;
+        _savedShadow.transform.rotation = ShadowInitiate.rotation;
+        _shadowPong.SetTarget(_ballPool[newBallIndex].transform);
+        
+        _ballPool[newBallIndex].SetActive(true);
 
         return  _ballPool[newBallIndex];
     }
@@ -44,8 +53,8 @@ public class BallSpawner : MonoBehaviour
     {
         for (int i = 0; i < _ballPool.Count; i++) {
             if (idleBall.Equals(_ballPool[i])) {
+//                Rigidbody rb = _ballPool[i].GetComponent<Rigidbody>();
                 _ballPool[i].SetActive(false);
-                _shadowPool[i].SetActive(false);
             }
         }
     }
@@ -54,12 +63,7 @@ public class BallSpawner : MonoBehaviour
     {
         GameObject nb = Instantiate(BallPrefab, PointInitiate.position, PointInitiate.rotation); 
         nb.transform.SetParent(this.transform);
-        
-        GameObject ns = Instantiate(ShadowPrefab, ShadowInitiate.position, ShadowInitiate.rotation);
-        ns.transform.SetParent(this.transform);
-
         _ballPool.Add(nb);
-        _shadowPool.Add(ns);
         return _ballPool.Count - 1 ; //returning last index
     }
 

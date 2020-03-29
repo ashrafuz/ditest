@@ -1,50 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shadow_Pong : MonoBehaviour {
-    public GameObject target;
+public class Shadow_Pong : MonoBehaviour
+{
+    private GameObject _target;
+    private Vector3 _offset;
 
-    public Vector3 Offset;
-
-
-    void Start()
+    public void SetTarget(Transform transform)
     {
-        target = GameObject.FindGameObjectWithTag("Beer_pong");
-
-        if (target == null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Offset = transform.position - target.transform.position;
-        }
+        _target = transform.gameObject;
+        _offset = transform.position - _target.transform.position;
     }
 
     void LateUpdate()
     {
-        if (target == null)
-        {
+        if (_target != null) {
+            transform.position = _target.transform.position + _offset;
         }
-        else
-        {
-            transform.position = target.transform.position + Offset;
-        }   
-    }
-    void Update()
-    {
-        if (target == null)
-        {
-          Destroy(gameObject);
-        }
-        if (target ==GameObject.FindGameObjectWithTag("Doble_Pong"))
-        {
-            Invoke("Destroy", 1);
-        }
-    }
-
-    void Destroy()
-    {
-        Destroy(gameObject);
     }
 }
