@@ -10,7 +10,7 @@ public class LoadMenu : MonoBehaviour {
 		//Clear Unused Textures
 		Resources.UnloadUnusedAssets();
 
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene(GameConstants.MENU_SCENE);
 		//Application.LoadLevel("menu"); obsolete
 	}
 
